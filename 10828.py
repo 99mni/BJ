@@ -1,7 +1,10 @@
+import sys
+N = int(sys.stdin.readline())
+
 stack = []
-N = int(input())
 for i in range(0,N):
-	cmd = input().split()
+	cmd = sys.stdin.readline().split()
+	
 	if (cmd[0] == 'push'):
 		stack.append(cmd[1])
 	elif (cmd[0] == 'size'):
