@@ -11,24 +11,23 @@ def dfs(node):
             dfs(i)
 
 
-if __name__ == '__main__':
-    n = int(input())
+n = int(input())
 
-    graph = [[] for _ in range(n+1)]
-    visited = [0] * (n+1)
-    parent = [0] * (n+1)
+graph = [[] for _ in range(n+1)]
+visited = [0] * (n+1)
+parent = [0] * (n+1)
 
-    while True:
-        try:
-            a, b = map(int, input().split())
-            graph[a].append(b)
-            graph[b].append(a)
-        except:
-            break
+while True:
+    try:
+        a, b = map(int, input().split())
+        graph[a].append(b)
+        graph[b].append(a)
+    except:
+        break
 
-    for i in range(n+1):
-        graph[i].sort()
+for i in range(n+1):
+    graph[i].sort()
 
-    dfs(1)
+dfs(1)
 
-    print(*parent[2:], sep='\n')
+print(*parent[2:], sep='\n')
