@@ -1,21 +1,17 @@
-from sys import stdin
+import sys
+input = sys.stdin.readline
 
+N, M = map(int,input().split())
+pok = {}
+num = {}
+for i in range(1, N+1):
+    p=input().strip()
+    pok[i] = p
+    num[p] = i
 
-def input():
-    return stdin.readline().rstrip()
-
-
-n, m = map(int, input().split())
-by_id = {}
-by_name = {}
-for i in range(1, n + 1):
-    pokemon = input()
-    by_id[i] = pokemon
-    by_name[pokemon] = i
-
-for _ in range(m):
-    x = input()
-    if x.isdigit():
-        print(by_id[int(x)])
+for _ in range(M):
+    a = input().strip()
+    if a.isdigit():
+        print(pok[int(a)])
     else:
-        print(by_name[x])
+        print(num[a])
